@@ -21,7 +21,7 @@ export default function PostForm({ post }) {
 
   async function submit(data) {
     if (post) {
-      const file = data.image[0] ? appwriteService.uploadFile(data.image[0]) : null;
+      const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
 
       if (file) {
         appwriteService.deleteFile(post.featuredImage);
@@ -46,7 +46,7 @@ export default function PostForm({ post }) {
           userId: userData.$id,
         });
         if (dbPost) {
-          navigate(`/posts/${dbPost.$id}`);
+          navigate(`/post/${dbPost.$id}`);
         }
       }
     }
@@ -57,7 +57,7 @@ export default function PostForm({ post }) {
       return value
         .trim()
         .toLowerCase()
-        .replace(/^[a-zA-Z\d]+/g, "-");
+        .replace(/[^\w]+/g, "-")
       // return "";
     }
   }, []);
@@ -68,7 +68,7 @@ export default function PostForm({ post }) {
         setValue("slug", slugTransform(value.title));
       }
     });
-    return ()=>(subscription.unsubscribe)
+    return ()=>(subscription.unsubscribe())
   }, [watch, slugTransform, setValue]);
 
   return (

@@ -9,15 +9,15 @@ export default function AllPosts() {
     .then((posts) => {
       if (posts) setPosts(posts.rows);
     })
-    .catch(setPosts("error"));
+    .catch(()=>setPosts("error"));
 
   return (
     <div>
       <Container>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap w-full">
             {posts.map((post) => (
-          <div key={post.$id}>
-            <PostCard post={post}/>
+          <div key={post.$id} >
+            <PostCard post={{...post}}/>
           </div>
         ))}
         </div>

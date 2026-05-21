@@ -84,7 +84,7 @@ export class Service{
         }
     }
 
-    async getPosts(queries = [Query.equal("status", "active")]){
+    async   getPosts(queries = [Query.equal("status", "active")]){
         try {
             return await this.databases.listRows({
                 databaseId : conf.appwriteDatabaseId,
@@ -124,8 +124,8 @@ export class Service{
         }
     }
 
-    async getFilePreview(fileId){
-        return await this.storage.getFilePreview({
+    getFilePreview(fileId){
+        return  this.storage.getFileView({
             bucketId: conf.appwriteBucketId,
             fileId: fileId,
         })
