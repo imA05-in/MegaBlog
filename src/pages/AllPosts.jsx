@@ -6,7 +6,7 @@ export default function AllPosts() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     appwriteService
-      .getPosts([])
+      .getPosts()
       .then((posts) => {
         if (posts) {setPosts(posts.rows);}
         // console.log("posts: ", posts);
