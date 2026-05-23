@@ -89,7 +89,7 @@ export class Service{
             return await this.databases.listRows({
                 databaseId : conf.appwriteDatabaseId,
                 tableId : conf.appwriteCollectionId,
-                queries: Query,
+                queries: queries,
             })
         } catch (error) {
             throw error

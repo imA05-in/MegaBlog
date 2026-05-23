@@ -25,12 +25,12 @@ export default function Home() {
   return(
     <div className="py-8">
         <Container>
-            <div>
+            <div className="flex gap-4 justify-around items-center">
                 {
                     posts.map((post)=>{
                         return(
                             <div key={post.$id}>
-                                <PostCard post = {post}/>
+                                <PostCard post = {{...post}}/>
                             </div>
                         )
                     })

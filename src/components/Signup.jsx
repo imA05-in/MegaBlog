@@ -24,8 +24,8 @@ export default function Signup() {
   }
 
   return (
-    <div className="flex items-center justify-self-center">
-      <div className="mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border-black/10">
+    <div className="flex items-center justify-self-center ">
+      <div className="mx-auto w-full max-w-lg bg-gray-100 text-black rounded-xl p-10 border-black/10 ">
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]">
             <Logo width="100%" />
