@@ -24,7 +24,7 @@ function App() {
 
   return !loading ? (
     <div className='bg-slate-800 h-screen flex flex-wrap text-white'>
-      <div className="block w-full">
+      <div className="block w-full bg-slate-800">
         <Header/>
         <main>
           <Outlet/>

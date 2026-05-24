@@ -44,6 +44,7 @@ export default function PostForm({ post }) {
         const dbPost = await appwriteService.createPost({
           ...data,
           userId: userData.$id,
+          name: userData.name,
         });
         if (dbPost) {
           navigate(`/post/${dbPost.$id}`);
