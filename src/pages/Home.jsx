@@ -25,7 +25,7 @@ export default function Home() {
   return(
     <div className="py-8">
         <Container>
-            <div className="flex gap-4 justify-around items-center">
+            <div className="flex gap-6 justify-evenly items-center flex-wrap">
                 {
                     posts.map((post)=>{
                         return(
